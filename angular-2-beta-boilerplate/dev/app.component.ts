@@ -1,32 +1,17 @@
-import {Component} from 'angular2/core'; 
-import {PropertyBindingComponent} from './property-binding.component';
+import {Component} from 'angular2/core';  
+import {AttributeDirectives} from './attribute-directives.component'; 
+import {StructuralDirectives} from './structural-directives.component';
 
 
 @Component({
     selector: 'my-app', // we can use <my-app></my-app> tag
     template: ` 
-    	<section class="parent"> 
-    	
-    		<h2> This is the parent component </h2>   
-    		<h4>Please enter your name</h4> 
-    		<input type="text" [(ngModel)]="name">  
-    		<h4>Please enter your age</h4> 
-    		<input type="text" [(ngModel)]="age"> 
-    		<br><br> 
-
-    			<section class="child"> 
-    				<my-property-binding [myName]="name" [myAge]="age" 
-    				(hobbiesChanged)="hobbies = $event"> 
-    				</my-property-binding> 
-    			</section>   
-
-    		<p>My hobbies are: {{hobbies}} </p> 
-
-    	</section>
+    	<my-attribute-directives></my-attribute-directives> 
+    	<br> 
+    	<h1>StructuralDirectives</h1> 
+    	<my-structural-directives></my-structural-directives>
     `, 
-    directives: [PropertyBindingComponent]  
+    directives: [AttributeDirectives, StructuralDirectives]
 })
 export class AppComponent {
-	name = ''; 
-	hobbies = '';
 }
