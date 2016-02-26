@@ -1,35 +1,31 @@
-/**
- * Created by sameng on 22/2/16.
- */
-import {Component,EventEmitter} from 'angular2/core';
+import {Component, EventEmitter} from 'angular2/core';
 import {ListItem} from "../list-item";
 import {ShoppingListService} from "./shopping-list.service";
 
 @Component({
     selector: 'shopping-list-item',
     template: `
-         <div class="input">
+        <div class="input">
             <label for="item-name">Name</label>
             <input type="text" id="item-name" [(ngModel)]="item.name">
         </div>
         <div class="input">
             <label for="item-amt">Amount</label>
-            <input type="text" id="item-amount" [(ngModel)]="item.amount">
+            <input type="text" id="item-amt" [(ngModel)]="item.amount">
         </div>
         <button class="danger" (click)="onDelete()">Delete Item</button>
     `,
     inputs: ['item'],
     outputs: ['removed']
 })
-export class ShoppingListItemComponent{
+export class ShoppingListItemComponent {
     item = {name: '', amount: 0};
-    removed = new EventEmitter();
+    removed = new EventEmitter<any>();
 
-    constructor(private _shoppingListService: ShoppingListService){}
+    constructor(private _shoppingListService: ShoppingListService) {}
 
-    onDelete(){
+    onDelete() {
         this._shoppingListService.deleteItem(this.item);
         this.removed.emit(null);
     }
-
 }

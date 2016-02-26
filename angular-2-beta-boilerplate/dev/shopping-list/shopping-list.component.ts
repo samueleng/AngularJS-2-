@@ -1,6 +1,3 @@
-/**
- * Created by sameng on 21/2/16.
- */
 import {Component} from 'angular2/core';
 import {ShoppingListNewItemComponent} from "./shopping-list-new-item.component";
 import {ListItem} from "../list-item";
@@ -12,45 +9,38 @@ import {OnInit} from "angular2/core";
     selector: 'shopping-list',
     template: `
         <section>
-           <shopping-list-new-item></shopping-list-new-item>
+            <shopping-list-new-item></shopping-list-new-item>
         </section>
         <section>
             <h3>My List</h3>
             <div class="list">
                 <ul>
-                    <li *ngFor="#listItem of listItems" (click)="onSelect(listItem)">
-                        {{listItem.name}}:{{listItem.amount}}
-                    </li>
+                    <li *ngFor="#listItem of listItems" (click)="onSelect(listItem)">{{listItem.name}} ({{listItem.amount}})</li>
                 </ul>
             </div>
         </section>
         <section *ngIf="selectedItem != null">
-           <shopping-list-item [item]="selectedItem" (removed)="onRemoved($event)"></shopping-list-item>
+            <shopping-list-item [item]="selectedItem" (removed)="onRemove()"></shopping-list-item>
         </section>
     `,
     directives: [ShoppingListNewItemComponent, ShoppingListItemComponent],
     providers: [ShoppingListService]
 })
-export class ShoppingListComponent implements OnInit{
+export class ShoppingListComponent implements OnInit {
     listItems: Array<ListItem>;
     selectedItem: ListItem;
 
-    constructor(private _shoppingListService: ShoppingListService){}
+    constructor(private _shoppingListService: ShoppingListService) {}
 
-    ngOnInit(): any {
-        this.listItems = this._shoppingListService.getItems();
-    }
-
-
-    onSelect(item: ListItem){
+    onSelect(item: ListItem) {
         this.selectedItem = item;
     }
 
-    onRemoved(item: ListItem){
-
-        this.selectedItem = null;
-        
+    ngOnInit():any {
+        this.listItems = this._shoppingListService.getItems();
     }
 
-
+    onRemove() {
+        this.selectedItem = null;
+    }
 }
