@@ -1,13 +1,13 @@
 import {Component} from 'angular2/core';
-import {Component1Component} from './component1.component';
+import {DataDrivenForm} from "./data-driven-form.component";
+
 
 @Component({
     selector: 'my-app',
     template: `
-        <h1>First Component</h1>
-        <component-1></component-1>
+        <my-data-form></my-data-form>
     `,
-    directives: [Component1Component]
+    directives: [DataDrivenForm]
 })
 export class AppComponent {
 

@@ -1,4 +1,4 @@
-System.register(['angular2/core', './component1.component'], function(exports_1) {
+System.register(['angular2/core', "./data-driven-form.component"], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,15 +8,15 @@ System.register(['angular2/core', './component1.component'], function(exports_1)
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, component1_component_1;
+    var core_1, data_driven_form_component_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (component1_component_1_1) {
-                component1_component_1 = component1_component_1_1;
+            function (data_driven_form_component_1_1) {
+                data_driven_form_component_1 = data_driven_form_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -25,8 +25,8 @@ System.register(['angular2/core', './component1.component'], function(exports_1)
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <h1>First Component</h1>\n        <component-1></component-1>\n    ",
-                        directives: [component1_component_1.Component1Component]
+                        template: "\n        <my-data-form></my-data-form>\n    ",
+                        directives: [data_driven_form_component_1.DataDrivenForm]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
@@ -37,4 +37,4 @@ System.register(['angular2/core', './component1.component'], function(exports_1)
     }
 });
 
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQudHMiXSwibmFtZXMiOlsiQXBwQ29tcG9uZW50IiwiQXBwQ29tcG9uZW50LmNvbnN0cnVjdG9yIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7WUFHQTtnQkFBQUE7Z0JBVUFDLENBQUNBO2dCQVZERDtvQkFBQ0EsZ0JBQVNBLENBQUNBO3dCQUNQQSxRQUFRQSxFQUFFQSxRQUFRQTt3QkFDbEJBLFFBQVFBLEVBQUVBLCtFQUdUQTt3QkFDREEsVUFBVUEsRUFBRUEsQ0FBQ0EsMENBQW1CQSxDQUFDQTtxQkFDcENBLENBQUNBOztpQ0FHREE7Z0JBQURBLG1CQUFDQTtZQUFEQSxDQVZBLEFBVUNBLElBQUE7WUFWRCx1Q0FVQyxDQUFBIiwiZmlsZSI6ImFwcC5jb21wb25lbnQuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQge0NvbXBvbmVudH0gZnJvbSAnYW5ndWxhcjIvY29yZSc7XG5pbXBvcnQge0NvbXBvbmVudDFDb21wb25lbnR9IGZyb20gJy4vY29tcG9uZW50MS5jb21wb25lbnQnO1xuXG5AQ29tcG9uZW50KHtcbiAgICBzZWxlY3RvcjogJ215LWFwcCcsXG4gICAgdGVtcGxhdGU6IGBcbiAgICAgICAgPGgxPkZpcnN0IENvbXBvbmVudDwvaDE+XG4gICAgICAgIDxjb21wb25lbnQtMT48L2NvbXBvbmVudC0xPlxuICAgIGAsXG4gICAgZGlyZWN0aXZlczogW0NvbXBvbmVudDFDb21wb25lbnRdXG59KVxuZXhwb3J0IGNsYXNzIEFwcENvbXBvbmVudCB7XG5cbn1cbiJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQudHMiXSwibmFtZXMiOlsiQXBwQ29tcG9uZW50IiwiQXBwQ29tcG9uZW50LmNvbnN0cnVjdG9yIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7WUFJQTtnQkFBQUE7Z0JBU0FDLENBQUNBO2dCQVRERDtvQkFBQ0EsZ0JBQVNBLENBQUNBO3dCQUNQQSxRQUFRQSxFQUFFQSxRQUFRQTt3QkFDbEJBLFFBQVFBLEVBQUVBLCtDQUVUQTt3QkFDREEsVUFBVUEsRUFBRUEsQ0FBQ0EsMkNBQWNBLENBQUNBO3FCQUMvQkEsQ0FBQ0E7O2lDQUdEQTtnQkFBREEsbUJBQUNBO1lBQURBLENBVEEsQUFTQ0EsSUFBQTtZQVRELHVDQVNDLENBQUEiLCJmaWxlIjoiYXBwLmNvbXBvbmVudC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7Q29tcG9uZW50fSBmcm9tICdhbmd1bGFyMi9jb3JlJztcbmltcG9ydCB7RGF0YURyaXZlbkZvcm19IGZyb20gXCIuL2RhdGEtZHJpdmVuLWZvcm0uY29tcG9uZW50XCI7XG5cblxuQENvbXBvbmVudCh7XG4gICAgc2VsZWN0b3I6ICdteS1hcHAnLFxuICAgIHRlbXBsYXRlOiBgXG4gICAgICAgIDxteS1kYXRhLWZvcm0+PC9teS1kYXRhLWZvcm0+XG4gICAgYCxcbiAgICBkaXJlY3RpdmVzOiBbRGF0YURyaXZlbkZvcm1dXG59KVxuZXhwb3J0IGNsYXNzIEFwcENvbXBvbmVudCB7XG5cbn1cbiJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==
