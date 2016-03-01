@@ -1,18 +1,26 @@
 import {Component} from 'angular2/core';
-import {ShoppingListComponent} from "./shopping-list/shopping-list.component";
+import {RouteConfig} from "angular2/router";
+import {ROUTER_DIRECTIVES} from "angular2/router";
+import {Component1Component} from './component1.component';
+import {Component2Component} from './component2.component';
 
 @Component({
     selector: 'my-app',
     template: `
         <header>
-            <div class="brand">Shopping List</div>
+            <ul>
+                <li><a [routerLink]="['Component1', {source: 'AppComponent', optional: 'This is optional'}]">Component1</a></li>
+                <li><a [routerLink]="['Component2']">Component2</a></li>
+            </ul>
         </header>
-        <div class="main">
-            <shopping-list></shopping-list>
-        </div>
+        <router-outlet></router-outlet>
     `,
-    directives: [ShoppingListComponent]
+    directives: [ROUTER_DIRECTIVES]
 })
+@RouteConfig([
+    {path: '/component-1/:source/...', name: 'Component1', component: Component1Component},
+    {path: '/component-2', name: 'Component2', component: Component2Component}
+])
 export class AppComponent {
 
 }
